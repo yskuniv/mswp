@@ -1,0 +1,24 @@
+AllCops:
+  TargetRubyVersion: 2.7
+  NewCops: enable
+
+Gemspec/RequireMFA:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
+
+Style:
+  Enabled: false
