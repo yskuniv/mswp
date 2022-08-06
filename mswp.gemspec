@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["ysk_univ"]
   spec.email         = ["ysk.univ.1007@gmail.com"]
 
-  spec.summary       = %q{}
-  spec.description   = %q{}
+  spec.summary       = %q{mswp}
+  spec.description   = %q{mswp}
   spec.homepage      = "https://github.com/yskuniv/mswp"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
