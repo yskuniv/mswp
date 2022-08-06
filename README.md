@@ -14,7 +14,7 @@ gem 'mswp'
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
