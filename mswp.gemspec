@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "rubocop", "~> 1.33"
+  spec.add_development_dependency "solargraph", "~> 0.45"
 end
