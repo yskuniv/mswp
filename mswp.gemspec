@@ -27,6 +27,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "curses", "~> 1.4"
+  spec.add_runtime_dependency "thor", "~> 1.2"
 
   spec.add_development_dependency "rubocop", "~> 1.33"
 end
