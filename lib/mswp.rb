@@ -1,1 +1,7 @@
 require "mswp/version"
+require "mswp/cell"
+require "mswp/mswp"
+require "mswp/game"
+require "mswp/cursor"
+require "mswp/curses_game"
+require "mswp/cli"
