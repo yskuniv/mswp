@@ -118,7 +118,7 @@ module MSwp
       Curses.getch
     end
 
-    def handle_input(mswp, input)
+    def handle_input(mswp, input) # rubocop: disable Metrics/CyclomaticComplexity
       case input
       when ?q
         raise Game::QuitKeyPressed
