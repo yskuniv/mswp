@@ -65,7 +65,7 @@ module MSwp
     def print_time(count)
     end
 
-    def get_input
+    def get_input # rubocop: disable Naming/AccessorMethodName
     end
 
     def handle_input(mswp, input)
