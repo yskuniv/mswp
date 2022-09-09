@@ -163,15 +163,21 @@ module MSwp
     end
 
     def handle_game_over(_mswp)
-      while Curses.getch != ?q; end
+      wait_quit_key_pressed
     end
 
     def handle_game_clear(_mswp)
-      while Curses.getch != ?q; end
+      wait_quit_key_pressed
     end
 
     def cleanup_game
       Curses.close_screen
+    end
+
+    private
+
+    def wait_quit_key_pressed
+      while get_input != ?q; end
     end
   end
 end
