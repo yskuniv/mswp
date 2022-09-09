@@ -114,7 +114,7 @@ module MSwp
       Curses.refresh
     end
 
-    def get_input
+    def get_input # rubocop: disable Naming/AccessorMethodName
       Curses.getch
     end
 
