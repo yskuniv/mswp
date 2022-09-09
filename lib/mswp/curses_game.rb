@@ -95,6 +95,16 @@ module MSwp
       Curses.addstr(str << (" " * (Curses.cols - str.length)))
       Curses.attroff(Curses::A_COLOR)
 
+      if game_over || game_clear
+        Curses.setpos(((size[2] + 1) * size[0]) + 2, 0)
+        case
+        when game_over
+          Curses.addstr('Game Over...')
+        when game_clear
+          Curses.addstr('Game Clear!!')
+        end
+      end
+
       Curses.refresh
     end
 
@@ -152,23 +162,11 @@ module MSwp
       mswp.flag_neighbors(@cursor.pos)
     end
 
-    def handle_game_over(mswp)
-      size = mswp.size
-
-      Curses.setpos(((size[2] + 1) * size[0]) + 2, 0)
-      Curses.addstr('Game Over...')
-      Curses.refresh
-
+    def handle_game_over(_mswp)
       while Curses.getch != ?q; end
     end
 
-    def handle_game_clear(mswp)
-      size = mswp.size
-
-      Curses.setpos(((size[2] + 1) * size[0]) + 2, 0)
-      Curses.addstr('Game Clear!!')
-      Curses.refresh
-
+    def handle_game_clear(_mswp)
       while Curses.getch != ?q; end
     end
 
