@@ -49,7 +49,7 @@ module MSwp
       Curses.curs_set(0)
     end
 
-    def print_field(mswp, game_over: false, game_clear: false)
+    def print_field(mswp, game_over: false, game_clear: false) # rubocop: disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
       size = mswp.size
 
       mswp.each_cell_with_pos do |cell, pos|
