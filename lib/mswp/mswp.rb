@@ -80,7 +80,7 @@ module MSwp
       return unless cell.neighbor_mines_count == flagged_cells.count
 
       (neighborhood - flagged_cells).each do |_, p|
-        begin touch(p); rescue Cell::TouchedCellTouched; end
+        begin touch(p); rescue Cell::TouchedCellTouched; end # rubocop: disable Lint/SuppressedException
       end
     end
 
@@ -91,7 +91,7 @@ module MSwp
       return unless cell.neighbor_mines_count == untouched_cells.count
 
       untouched_cells.each do |_, p|
-        begin flag(p); rescue Cell::FlaggedCellFlagged; end
+        begin flag(p); rescue Cell::FlaggedCellFlagged; end # rubocop: disable Lint/SuppressedException
       end
     end
 
