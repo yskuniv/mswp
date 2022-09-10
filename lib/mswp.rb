@@ -1,6 +1,7 @@
 require "mswp/version"
-
-module MSwp
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require "mswp/cell"
+require "mswp/mswp"
+require "mswp/game"
+require "mswp/cursor"
+require "mswp/curses_game"
+require "mswp/cli"
