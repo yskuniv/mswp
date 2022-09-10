@@ -60,6 +60,7 @@ module MSwp
 
     def toggle_flag(pos)
       flagged = @cells[pos].toggle_flag
+
       if flagged
         @flagged_cells_count += 1
       else
