@@ -19,12 +19,9 @@ module MSwp
     class GameClear < GameEnd; end
 
     def initialize(size, mines_count)
-      raise IllegalSizeSpecified unless size.all? { |v| v >= 1 }
-      raise IllegalMinesCountSpecified unless mines_count >= 0
-
       all_cells_count = size.reduce(&:*)
 
-      raise TooManyMinesCountSpecified unless mines_count < all_cells_count
+      validate_parameters(size, all_cells_count, mines_count)
 
       @cells = MdArray::MdArray.new(size) { Cell.new }
       @size = size
@@ -124,6 +121,12 @@ module MSwp
     attr_reader :size, :mines_count, :untouched_cells_count, :flagged_cells_count, :active
 
     private
+
+    def validate_parameters(size, all_cells_count, mines_count)
+      raise IllegalSizeSpecified unless size.all? { |v| v >= 1 }
+      raise IllegalMinesCountSpecified unless mines_count >= 0
+      raise TooManyMinesCountSpecified unless mines_count < all_cells_count
+    end
 
     def initialize_cells(reject_pos)
       @cells.each(&:reset)
