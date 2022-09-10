@@ -65,7 +65,7 @@ module MSwp
                               } ?
                               5 : 0))
 
-        Curses.setpos(pos[2] + ((size[2] + 1) * pos[0]) + 2, (2 * pos[3]) + ((size[3] + 1) * 2 * pos[1]))
+        Curses.setpos(2 + ((size[2] + 1) * pos[0]) + pos[2], (2 * (size[3] + 1) * pos[1]) + (2 * pos[3]))
         if (!game_over || mswp.active) && !cell.touched
           if cell.flagged
             Curses.attron(Curses.color_pair(3 + color_offset))
@@ -96,7 +96,7 @@ module MSwp
       end
 
       if game_over || game_clear
-        Curses.setpos(((size[2] + 1) * size[0]) + 2, 0)
+        Curses.setpos(2 + ((size[2] + 1) * size[0]), 0)
         case
         when game_over
           Curses.addstr('Game Over...')
