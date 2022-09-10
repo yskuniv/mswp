@@ -18,7 +18,6 @@ module MSwp
     def start(*size)
       mines_count = options[:m]
       auto = options[:auto]
-
       size_ = size.map(&:to_i).reverse
 
       begin
