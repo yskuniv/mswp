@@ -59,11 +59,14 @@ module MSwp
       Curses.attroff(Curses::A_COLOR)
 
       mswp.each_cell_with_pos do |cell, pos|
-        color_offset = (pos == @cursor.pos ?
-                        10 : (pos.each_index.all? { |i|
-                                (pos[i] - @cursor.pos[i]).abs <= 1
-                              } ?
-                              5 : 0))
+        color_offset = case
+                       when pos == @cursor.pos
+                         10
+                       when pos.each_index.all? { |i| (pos[i] - @cursor.pos[i]).abs <= 1 }
+                         5
+                       else
+                         0
+                       end
 
         Curses.setpos(2 + ((size[2] + 1) * pos[0]) + pos[2], (2 * (size[3] + 1) * pos[1]) + (2 * pos[3]))
         if (!game_over || mswp.active) && !cell.touched
