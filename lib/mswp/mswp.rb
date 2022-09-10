@@ -86,7 +86,7 @@ module MSwp
 
     def flag_neighbors(pos)
       cell = @cells[pos]
-      untouched_cells = @cells.neighborhood_with_index(pos).reject { |c, _| c.touched }
+      untouched_cells = @cells.neighborhood_with_index(pos).to_a.reject { |c, _| c.touched }
 
       return unless cell.neighbor_mines_count == untouched_cells.count
 
