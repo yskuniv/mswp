@@ -30,6 +30,8 @@ module MSwp
       @size = size
       @all_cells_count = all_cells_count
       @mines_count = mines_count
+      @untouched_cells_count = all_cells_count
+      @flagged_cells_count = 0
       @active = false
     end
 
