@@ -51,9 +51,9 @@ module MSwp
 
     def print_field(mswp, game_over: false, game_clear: false) # rubocop: disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
       Curses.setpos(0, 0)
-      str = "Mines: #{mswp.mines_count}, Flagged: #{mswp.flagged_cells_count}, Untouched: #{mswp.untouched_cells_count}, Position: (#{@cursor.pos.reverse.join(', ')})"
+      header = "Mines: #{mswp.mines_count}, Flagged: #{mswp.flagged_cells_count}, Untouched: #{mswp.untouched_cells_count}, Position: (#{@cursor.pos.reverse.join(', ')})"
       Curses.attron(Curses.color_pair(2))
-      Curses.addstr(str << (" " * (Curses.cols - str.length)))
+      Curses.addstr(header << (" " * (Curses.cols - header.length)))
       Curses.attroff(Curses::A_COLOR)
 
       size = mswp.size
