@@ -50,13 +50,13 @@ module MSwp
     end
 
     def print_field(mswp, game_over: false, game_clear: false) # rubocop: disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+      size = mswp.size
+
       Curses.setpos(0, 0)
       header = "Mines: #{mswp.mines_count}, Flagged: #{mswp.flagged_cells_count}, Untouched: #{mswp.untouched_cells_count}, Position: (#{@cursor.pos.reverse.join(', ')})"
       Curses.attron(Curses.color_pair(2))
       Curses.addstr(header << (" " * (Curses.cols - header.length)))
       Curses.attroff(Curses::A_COLOR)
-
-      size = mswp.size
 
       mswp.each_cell_with_pos do |cell, pos|
         color_offset = (pos == @cursor.pos ?
