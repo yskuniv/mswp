@@ -14,7 +14,7 @@ module MSwp
     option :auto, :type => :boolean,
                   :default => false,
                   :desc => "enable auto mode :)"
-    desc "start size1 size2", "start a game"
+    desc "start size1 size2", "Start a game"
     def start(*size)
       mines_count = options[:m]
       auto = options[:auto]
