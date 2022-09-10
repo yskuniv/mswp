@@ -1,7 +1,7 @@
 module MSwp
   class Cursor
     def initialize(size)
-      @size = size.freeze
+      @size = size
       @pos = Array.new(size.length, 0)
     end
 
