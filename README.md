@@ -23,7 +23,7 @@ Or you want to install it locally, execute:
 $ bundle install --path=vendor/bundle
 ```
 
-When you install locally, you should also install binstub of this gem:
+When you install it locally, you should also install binstub of this gem:
 
 ```console
 $ bundle binstubs mswp
