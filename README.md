@@ -29,7 +29,7 @@ When you install it locally, you should also install binstub of this gem:
 $ bundle binstubs mswp
 ```
 
-Then, now you can run the command like the following:
+Then now you can run the command like the following:
 
 ```console
 $ ./bin/mswp
