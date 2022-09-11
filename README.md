@@ -6,6 +6,42 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
+Clone this repository at anywhere you want, then get into the directory:
+
+```console
+$ git clone https://github.com/yskuniv/mswp.git
+$ cd mswp/
+```
+
+And then execute:
+
+```console
+$ bundle install
+```
+
+Or you want to install it locally, execute:
+
+```console
+$ bundle install --path=vendor/bundle
+```
+
+When you install locally, you should also install binstub of this gem:
+
+```console
+$ bundle binstubs mswp
+```
+
+Then, now you can run the command like the following:
+
+```console
+$ ./bin/mswp
+Commands:
+  mswp help [COMMAND]          # Describe available commands or one specific command
+  mswp start size1 size2 -m=N  # Start a game.
+
+$
+```
+
 ## Usage
 
 TODO: Write usage instructions here
