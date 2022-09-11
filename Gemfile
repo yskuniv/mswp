@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
-
 # Specify your gem's dependencies in mswp.gemspec
 gemspec
+
+gem "md_array", git: "https://github.com/yskuniv/md_array.git", tag: 'v0.4.0'
+
+gem "rake", "~> 12.0"
+gem "rspec", "~> 3.0"

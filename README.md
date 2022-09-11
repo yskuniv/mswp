@@ -1,35 +1,61 @@
 # MSwp
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mswp`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+MSwp game.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Clone this repository at anywhere you want, then get into the directory:
 
-```ruby
-gem 'mswp'
+```console
+$ git clone https://github.com/yskuniv/mswp.git
+$ cd mswp/
 ```
 
 And then execute:
 
-    $ bundle
+```console
+$ bundle install
+```
 
-Or install it yourself as:
+Or you want to install it locally, execute:
 
-    $ gem install mswp
+```console
+$ bundle install --path=vendor/bundle
+```
+
+When you install it locally, you should also install binstub of this gem:
+
+```console
+$ bundle binstubs mswp
+```
+
+Then now you can run the command like the following:
+
+```console
+$ ./bin/mswp
+Commands:
+  mswp help [COMMAND]          # Describe available commands or one specific command
+  mswp start size1 size2 -m=N  # Start a game.
+
+$
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Just run the command like the following:
+
+```console
+$ mswp start -m 10 10 10
+```
+
+So now you can play the game!
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/mswp.
+Bug reports and pull requests are welcome on GitHub at https://github.com/yskuniv/mswp.
