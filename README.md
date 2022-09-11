@@ -44,7 +44,13 @@ $
 
 ## Usage
 
-TODO: Write usage instructions here
+Just run the command like the following:
+
+```console
+$ mswp start -m 10 10 10
+```
+
+So now you can play the game!
 
 ## Development
 
