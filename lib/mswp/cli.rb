@@ -22,11 +22,11 @@ module MSwp
 
       begin
         CursesGame.start(size_, mines_count, auto)
-      rescue MSwp::IllegalMinesCountSpecified # FIXME: this rescue doesn't work
+      rescue MSwp::IllegalMinesCountSpecified
         abort("Error: illegal mines count specified")
-      rescue MSwp::TooManyMinesCountSpecified # FIXME: this rescue doesn't work
+      rescue MSwp::TooManyMinesCountSpecified
         abort("Error: too many mines count specified")
-      rescue MSwp::IllegalSizeSpecified, CursesGame::IllegalSizeSpecified # FIXME: this rescue doesn't work
+      rescue MSwp::IllegalSizeSpecified, CursesGame::IllegalSizeSpecified
         abort("Error: illegal size specified")
       end
     end
