@@ -9,9 +9,9 @@ module MSwp
     end
 
     def start(size, mines_count, auto)
-      mswp = MSwp.new(size, mines_count)
-
       init_game(size)
+
+      mswp = MSwp.new(size, mines_count)
 
       th = start_timer_thread
 
