@@ -27,6 +27,7 @@ module MSwp
 
     def init_game(size)
       @cursor = Cursor.new(size)
+      @real_dimension = 4 - size.take_while { |e| e == 1 }.count
 
       Curses.init_screen
       Curses.start_color
@@ -52,8 +53,10 @@ module MSwp
     def print_field(mswp, game_over: false, game_clear: false) # rubocop: disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
       size = mswp.size
 
+      real_curosr_pos = @cursor.pos.drop(4 - @real_dimension)
+
       Curses.setpos(0, 0)
-      header = "Mines: #{mswp.mines_count}, Flagged: #{mswp.flagged_cells_count}, Untouched: #{mswp.untouched_cells_count}, Position: (#{@cursor.pos.reverse.join(', ')})"
+      header = "Mines: #{mswp.mines_count}, Flagged: #{mswp.flagged_cells_count}, Untouched: #{mswp.untouched_cells_count}, Position: (#{real_curosr_pos.reverse.join(', ')})"
       Curses.attron(Curses.color_pair(2))
       Curses.addstr(header << (" " * (Curses.cols - header.length)))
       Curses.attroff(Curses::A_COLOR)
